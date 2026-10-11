@@ -1,0 +1,21 @@
+# Die vier Notenstimmen. "key" = Ordnername unter static/noten/ und URL /noten/<key>/
+[[stimme]]
+key = "c"
+name = "C-Stimme"
+zusatz = "mit Liedtexten"
+instrumente = "Gesang, Klavier, Keyboard, Gitarre, Flöte (Quer- und Blockflöte), Oboe, Fagott, Posaune, Tuba, Geige, Bratsche, Cello, Kontrabass, Glockenspiel, Xylophon"
+
+[[stimme]]
+key = "b"
+name = "B-Stimme"
+instrumente = "Trompete, Flügelhorn, B-Klarinette, Sopran- und Tenorsaxophon"
+
+[[stimme]]
+key = "es"
+name = "Es-Stimme"
+instrumente = "Altsaxophon, Baritonsaxophon, Es-Klarinette, Es-Tenorhorn"
+
+[[stimme]]
+key = "f"
+name = "F-Stimme"
+instrumente = "Horn, Bass-Tuba"

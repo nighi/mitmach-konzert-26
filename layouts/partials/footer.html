@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Telefonische Infos</strong> gerne bei
+    {{ range $i, $k := site.Params.kontakt }}{{ if $i }} oder {{ end }}{{ $k.name }}
+      <a href="tel:{{ replaceRE `[^0-9+]` "" $k.telefon }}">{{ $k.telefon }}</a>{{ end }}.</p>
+    <p class="muted">{{ site.Params.veranstalter }}</p>
+  </div>
+</footer>

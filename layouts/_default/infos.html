@@ -1,0 +1,26 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ partial "eckdaten.html" . }}
+<div class="text">{{ .Content }}</div>
+
+<h2>Liedfolge</h2>
+<ol class="liedfolge">
+  {{ range partial "aktive-lieder.html" . }}
+  <li>{{ .titel }}{{ with .hinweis }} <span class="muted">({{ . }})</span>{{ end }}</li>
+  {{ end }}
+</ol>
+
+<h2>Instrumentengruppen</h2>
+<ul class="stimmen">
+  {{ range site.Data.stimmen.stimme }}
+  <li><a href="{{ printf "noten/%s/" .key | relURL }}"><strong>{{ .name }}</strong>{{ with .zusatz }} ({{ . }}){{ end }}</a><br>
+    <span class="muted">z. B. {{ .instrumente }}</span></li>
+  {{ end }}
+</ul>
+
+<h2>Anmeldung</h2>
+<div class="ctas">{{ partial "cta-anmeldung.html" . }}</div>
+
+<p><a href="{{ "img/flyer.jpg" | relURL }}" target="_blank" rel="noopener">Flyer ansehen / herunterladen</a></p>
+<p class="gruss">Wir freuen uns auf EUCH mit euren Instrumenten!</p>
+{{ end }}

@@ -1,0 +1,22 @@
+{{- /* Erwartet: dict "nr" "lied" "stimme" */ -}}
+{{- $pdf := printf "noten/%s/%s.pdf" .stimme .lied.datei -}}
+{{- $mp3 := printf "audio/%s.mp3" .lied.datei -}}
+{{- $hatPdf := and .lied.datei (fileExists (printf "static/%s" $pdf)) -}}
+{{- $hatMp3 := and .lied.datei (fileExists (printf "static/%s" $mp3)) -}}
+<li class="lied">
+  <div class="lied-kopf">
+    <span class="nr">{{ printf "%02d" .nr }}</span>
+    <div>
+      <h3>{{ .lied.titel }}</h3>
+      {{ with .lied.hinweis }}<p class="hinweis">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+  {{ if $hatPdf }}
+  <a class="btn btn-small" href="{{ $pdf | relURL }}" target="_blank" rel="noopener">Noten (PDF)</a>
+  {{ else }}
+  <p class="folgt">Noten folgen</p>
+  {{ end }}
+  {{ if $hatMp3 }}
+  <audio controls preload="none" src="{{ $mp3 | relURL }}">Hörbeispiel</audio>
+  {{ end }}
+</li>

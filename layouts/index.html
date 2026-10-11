@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="hero">
+  <img src="{{ "img/hero.jpg" | relURL }}" alt="Advent Mitmach-Konzert – Orchester in der Kirche" width="910" height="402">
+</section>
+<p class="kicker">Sei dabei beim</p>
+<h1>Advent Mitmach-Konzert</h1>
+{{ partial "eckdaten.html" . }}
+<p class="lead">Eingeladen sind <strong>alle</strong> Musiker, Musikerinnen, Sänger und Sängerinnen – egal welches Alter!</p>
+<div class="ctas">
+  {{ partial "cta-anmeldung.html" . }}
+  <a class="btn" href="{{ "noten/" | relURL }}">
+    <span class="btn-title">Noten &amp; Hörbeispiele</span>
+    <span class="btn-sub">PDF für C-, B-, Es- und F-Stimme</span>
+  </a>
+  <a class="btn" href="{{ "infos/" | relURL }}">
+    <span class="btn-title">Mehr Infos</span>
+    <span class="btn-sub">Wer kann mitmachen? Liedfolge, Instrumente</span>
+  </a>
+</div>
+<div class="text">{{ .Content }}</div>
+<p class="gruss">Wir freuen uns auf EUCH mit euren Instrumenten!</p>
+{{ end }}

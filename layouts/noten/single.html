@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ $key := .Params.stimme }}
+{{ $stimme := index (where site.Data.stimmen.stimme "key" $key) 0 }}
+<p class="zurueck"><a href="{{ "noten/" | relURL }}">← andere Stimme wählen</a></p>
+<h1>{{ $stimme.name }}{{ with $stimme.zusatz }} <small>· {{ . }}</small>{{ end }}</h1>
+<p class="muted">z. B. {{ $stimme.instrumente }}</p>
+<a class="btn btn-primary" href="{{ printf "noten/%s/alle-noten-%s.zip" $key $key | relURL }}" download>
+  <span class="btn-title">Alle Noten als ZIP</span>
+  <span class="btn-sub">{{ $stimme.name }} – alle Lieder in einem Download</span>
+</a>
+<ol class="lieder">
+  {{ range $i, $lied := partial "aktive-lieder.html" . }}
+  {{ partial "lied.html" (dict "nr" (add $i 1) "lied" $lied "stimme" $key) }}
+  {{ end }}
+</ol>
+{{ end }}

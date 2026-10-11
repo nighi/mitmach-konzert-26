@@ -1,0 +1,89 @@
+# ============================================================
+#  LIEDFOLGE – hier wird festgelegt, welche Lieder in welcher
+#  Reihenfolge auf der Webseite (und in den ZIP-Downloads) stehen.
+#
+#  - Reihenfolge in dieser Datei = Reihenfolge auf der Webseite.
+#    Zum Umsortieren einfach ganze [[lied]]-Blöcke verschieben.
+#  - aktiv = false  → Lied wird ausgeblendet (Dateien bleiben liegen).
+#  - datei          → Dateiname ohne Endung. Erwartet werden:
+#                       static/noten/b/<datei>.pdf   (B-Stimme)
+#                       static/noten/c/<datei>.pdf   (C-Stimme + Text)
+#                       static/noten/es/<datei>.pdf  (Es-Stimme)
+#                       static/noten/f/<datei>.pdf   (F-Stimme)
+#                       static/audio/<datei>.mp3     (Hörbeispiel, optional)
+#                     Fehlt eine Datei, steht dort „Noten folgen“.
+#  - hinweis        → optionaler kleiner Zusatz unter dem Titel.
+# ============================================================
+
+[[lied]]
+titel = "Wo zwei oder drei in meinem Namen versammelt sind"
+hinweis = "Kanon zum Einsingen"
+datei = "wo-zwei-oder-drei"
+aktiv = true
+
+[[lied]]
+titel = "Wir sagen euch an den lieben Advent"
+datei = "wir-sagen-euch-an"
+aktiv = true
+
+[[lied]]
+titel = "Stern über Bethlehem"
+datei = "stern-ueber-bethlehem"
+aktiv = true
+
+[[lied]]
+titel = "O Heiland, reiß die Himmel auf"
+datei = "oh-heiland-reiss-die-himmel-auf"
+aktiv = true
+
+[[lied]]
+titel = "Peace, Friede, Schalom, Salam"
+datei = "peace-friede-schalom"
+aktiv = true
+
+[[lied]]
+titel = "O Herr, wenn du kommst"
+datei = "oh-herr-wenn-du-kommst"
+aktiv = true
+
+[[lied]]
+titel = "Engel jitt et immer widder – Gloria in excelsis"
+datei = "engel-jitt-et-immer-widder"
+aktiv = true
+
+[[lied]]
+titel = "Mögen die Straßen – Irische Segenswünsche"
+datei = "irische-segenswuensche"
+aktiv = true
+
+[[lied]]
+titel = "Tochter Zion"
+datei = "tochter-zion"
+aktiv = true
+
+[[lied]]
+titel = "Feliz Navidad"
+datei = "feliz-navidad"
+aktiv = true
+
+[[lied]]
+titel = "O du Fröhliche"
+datei = "o-du-froehliche"
+aktiv = true
+
+# ---- Noten vorhanden, aber aktuell nicht in der Liedfolge ----
+
+[[lied]]
+titel = "Hillich Ovend ben ich Doheim"
+datei = "hillich-ovend"
+aktiv = false
+
+[[lied]]
+titel = "Ne besondere Kalender"
+datei = "ne-besondere-kalender"
+aktiv = false
+
+[[lied]]
+titel = "Die schönste Stross"
+datei = "die-schoenste-stross"
+aktiv = false

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="text">{{ .Content }}</div>
+<ul class="stimmen-wahl">
+  {{ range site.Data.stimmen.stimme }}
+  <li>
+    <a class="btn" href="{{ printf "noten/%s/" .key | relURL }}">
+      <span class="btn-title">{{ .name }}{{ with .zusatz }} <small>· {{ . }}</small>{{ end }}</span>
+      <span class="btn-sub">z. B. {{ .instrumente }}</span>
+    </a>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

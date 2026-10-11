@@ -1,0 +1,22 @@
+baseURL = "https://example.org/"
+languageCode = "de-DE"
+defaultContentLanguage = "de"
+title = "Advent Mitmach-Konzert"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  veranstalter = "Musik- und Gesangverein 1874 Erlenbach e.V."
+  datum = "Sonntag, 13. Dezember 2026"
+  uhrzeit = "16:30 Uhr"
+  ort = "Pfarrkirche St. Burkard Erlenbach"
+  ortLink = "https://www.google.com/maps/search/?api=1&query=Pfarrkirche+St.+Burkard+Erlenbach+am+Main"
+  anmeldung = "https://forms.cloud.microsoft/r/JMPtKyTbQC"
+  # true = Suchmaschinen sollen die Seite nicht anzeigen (siehe auch vercel.json)
+  noindex = true
+
+  [[params.kontakt]]
+    name = "Edwin Martin"
+    telefon = "09391 / 5282"
+  [[params.kontakt]]
+    name = "Heiko Flohr"
+    telefon = "09391 / 3609"

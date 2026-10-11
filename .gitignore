@@ -1,0 +1,9 @@
+/public/
+/resources/_gen/
+.hugo_build.lock
+# Original-Material (Quelle der Dateien in static/)
+/Advent Mitmach Konzert/
+/OneDrive_*.zip
+/Flyer.png
+/hugo
+.vercel
