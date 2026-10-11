@@ -6,7 +6,7 @@
 <h2>Liedfolge</h2>
 <ol class="liedfolge">
   {{ range partial "aktive-lieder.html" . }}
-  <li>{{ .titel }}{{ with .hinweis }} <span class="muted">({{ . }})</span>{{ end }}</li>
+  <li><span>{{ .titel }}{{ with .hinweis }} <span class="muted">({{ . }})</span>{{ end }}</span></li>
   {{ end }}
 </ol>
 

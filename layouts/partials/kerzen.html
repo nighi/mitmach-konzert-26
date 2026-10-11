@@ -1,0 +1,38 @@
+{{- /* Adventskranz: site.Params.kerzen = Anzahl brennender Kerzen (0–4) */ -}}
+{{- $an := site.Params.kerzen | default 4 -}}
+<svg class="kerzen" viewBox="0 0 320 170" aria-hidden="true">
+  <defs>
+    <radialGradient id="glut" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffd27a" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wachs" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff6e6"/>
+      <stop offset=".7" stop-color="#efe0c6"/>
+      <stop offset="1" stop-color="#d9c4a2"/>
+    </linearGradient>
+  </defs>
+  {{- range $i, $k := slice (dict "x" 52 "h" 84) (dict "x" 120 "h" 100) (dict "x" 188 "h" 92) (dict "x" 256 "h" 76) }}
+  {{- $top := sub 140 $k.h }}
+  <g class="kerze{{ if lt $i $an }} an{{ end }}" style="--d:{{ mul $i 0.37 }}s">
+    <circle class="glut" cx="{{ $k.x }}" cy="{{ sub $top 14 }}" r="34" fill="url(#glut)"/>
+    <rect x="{{ sub $k.x 15 }}" y="{{ $top }}" width="30" height="{{ $k.h }}" rx="4" fill="url(#wachs)"/>
+    <line x1="{{ $k.x }}" y1="{{ $top }}" x2="{{ $k.x }}" y2="{{ sub $top 7 }}" stroke="#3a2a1c" stroke-width="2" stroke-linecap="round"/>
+    <path class="flamme" d="M{{ $k.x }} {{ sub $top 32 }} C{{ add $k.x 8 }} {{ sub $top 20 }} {{ add $k.x 9 }} {{ sub $top 9 }} {{ $k.x }} {{ sub $top 5 }} C{{ sub $k.x 9 }} {{ sub $top 9 }} {{ sub $k.x 8 }} {{ sub $top 20 }} {{ $k.x }} {{ sub $top 32 }}Z" fill="#ffc94d"/>
+  </g>
+  {{- end }}
+  <g class="zweige">
+    <ellipse cx="22" cy="148" rx="34" ry="9" transform="rotate(-12 22 148)"/>
+    <ellipse cx="86" cy="152" rx="40" ry="10" transform="rotate(8 86 152)"/>
+    <ellipse cx="154" cy="146" rx="42" ry="10" transform="rotate(-6 154 146)"/>
+    <ellipse cx="222" cy="152" rx="40" ry="10" transform="rotate(10 222 152)"/>
+    <ellipse cx="292" cy="147" rx="34" ry="9" transform="rotate(-10 292 147)"/>
+    <ellipse cx="120" cy="156" rx="36" ry="7" transform="rotate(-4 120 156)" class="hell"/>
+    <ellipse cx="200" cy="157" rx="36" ry="7" transform="rotate(5 200 157)" class="hell"/>
+  </g>
+  <g class="beeren">
+    <circle cx="70" cy="146" r="4.5"/><circle cx="78" cy="150" r="4"/>
+    <circle cx="160" cy="153" r="4.5"/><circle cx="168" cy="149" r="4"/>
+    <circle cx="238" cy="147" r="4.5"/><circle cx="246" cy="152" r="4"/>
+  </g>
+</svg>

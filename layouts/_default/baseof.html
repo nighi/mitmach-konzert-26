@@ -5,29 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
   <meta name="description" content="{{ site.Title }} am {{ site.Params.datum }}, {{ site.Params.uhrzeit }} in der {{ site.Params.ort }} – Mitmachen, Noten, Infos.">
-  <meta name="theme-color" content="#f5c89a">
+  <meta name="theme-color" content="#0d1b2e" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6efe3" media="(prefers-color-scheme: light)">
   {{ if site.Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ end }}
   <meta property="og:title" content="{{ site.Title }}">
   <meta property="og:description" content="{{ site.Params.datum }} · {{ site.Params.uhrzeit }} · {{ site.Params.ort }}">
-  <meta property="og:image" content="{{ "img/hero.jpg" | absURL }}">
+  <meta property="og:image" content="{{ "img/og.jpg" | absURL }}">
+  <link rel="preload" href="{{ "fonts/fraunces.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
   {{ with resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
   {{ end }}
 </head>
 <body>
+  {{ if not .IsHome }}
   <header class="site-header">
-    <a class="brand" href="{{ "/" | relURL }}">
-      <img src="{{ "img/logo-mgv.png" | relURL }}" alt="" width="58" height="51">
-      <span>{{ site.Params.veranstalter }}</span>
-    </a>
-    {{ if not .IsHome }}
+    {{ partial "brand.html" . }}
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="{{ "/" | relURL }}">Start</a>
       <a href="{{ "noten/" | relURL }}"{{ if eq .Section "noten" }} aria-current="page"{{ end }}>Noten</a>
       <a href="{{ "infos/" | relURL }}"{{ if eq .RelPermalink ("infos/" | relURL) }} aria-current="page"{{ end }}>Infos</a>
     </nav>
-    {{ end }}
   </header>
+  {{ end }}
   <main class="wrap">
     {{ block "main" . }}{{ end }}
   </main>

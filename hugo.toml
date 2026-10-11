@@ -8,6 +8,11 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
   veranstalter = "Musik- und Gesangverein 1874 Erlenbach e.V."
   datum = "Sonntag, 13. Dezember 2026"
   uhrzeit = "16:30 Uhr"
+  zusatz = "3. Advent"
+  datumISO = "2026-12-13T16:30:00+01:00"   # für den Countdown auf der Startseite
+  tag = "13"                               # Kalendertürchen auf der Startseite
+  monat = "Dez"
+  kerzen = 3                               # brennende Kerzen am Adventskranz (0–4)
   ort = "Pfarrkirche St. Burkard Erlenbach"
   ortLink = "https://www.google.com/maps/search/?api=1&query=Pfarrkirche+St.+Burkard+Erlenbach+am+Main"
   anmeldung = "https://forms.cloud.microsoft/r/JMPtKyTbQC"
